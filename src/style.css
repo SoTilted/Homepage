@@ -1,0 +1,182 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+p {
+  font-size: 1.3rem;
+}
+
+body {
+  background-color: black;
+}
+.header {
+  z-index: 0;
+  position: relative;
+  color: greenyellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: skewY(50deg);
+  background-color: #123a15;
+}
+
+.About-me {
+  margin: 20px;
+  transform: skewY(-50deg);
+  background-color: transparent;
+  width: 280px;
+  height: 372px;
+  perspective: 1000px;
+}
+
+.About-me-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.About-me:hover .About-me-inner {
+  transform: rotateY(180deg);
+}
+
+.About-me-front,
+.About-me-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.About-me-front {
+  box-shadow: 0 0 10px white;
+  min-width: 280px;
+  background-size: contain;
+  background-image: url(./assets/me.jpg);
+  background-color: #bbb;
+  color: black;
+}
+
+.About-me-back {
+  box-shadow: 0 0 10px white;
+  background-color: rgb(22, 22, 22);
+  color: white;
+  transform: rotateY(180deg);
+}
+.About-me-back p {
+  margin-top: 8px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 130px;
+}
+.footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: #123a15;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding: 20px;
+}
+
+.contact-info p {
+  text-align: center;
+  font-size: 1rem;
+}
+
+p {
+  color: white;
+}
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  border: 1px solid black;
+  background-color: rgb(22, 22, 22);
+  color: greenyellow;
+  transition: transform 1s;
+  box-shadow: 0 0 10px white;
+}
+.project-card img {
+  width: 100%;
+}
+
+.project-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+.lines {
+  z-index: -2;
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  top: 70%;
+}
+
+.progress-bar {
+  background: #071708;
+  height: 0%;
+  box-shadow: 0 0 8px greenyellow;
+}
+
+#no1 {
+  right: 50%;
+}
+
+#no2 {
+  transform: skewY(-50deg);
+  right: 25%;
+}
+
+#no3 {
+  right: 75%;
+  transform: skewY(50deg);
+}
+
+.active {
+  transform: scale(1.005);
+  box-shadow: 0 0 15px greenyellow;
+}
+
+h1 {
+  z-index: 2;
+  color: greenyellow;
+  text-shadow: #4fda58 1px 0 15px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.7rem;
+  text-shadow: #071708 1px 0 10px;
+}
+
+h3 {
+  margin: 0 auto;
+  font-size: 1.4rem;
+}
