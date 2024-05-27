@@ -32,6 +32,28 @@ let height = Math.max(
   html.offsetHeight
 );
 
+//set an observer using itersectionObserver API to check if an element is visible during scrolling
+
+const intersectionCallback = (entries) => {
+  entries.forEach((entry) => {
+    let elem = entry.target;
+    if (entry.isIntersecting) {
+      if (elem.classList.length === 1) {
+        elem.classList.add("active");
+      }
+    } else {
+      elem.classList.remove("active");
+    }
+  });
+};
+
+let options = {
+  root: null,
+  rootMargin: "5px",
+  threshold: 0.9,
+};
+let observer = new IntersectionObserver(intersectionCallback, options);
+
 //checks if the device is touch screen and adds the image flip as a tap
 // and the observer to make the project cards glow when visible
 if (
@@ -75,24 +97,3 @@ function fillBar() {
     elem.style.height = scrolled + "%";
   });
 }
-//set an observer using itersectionObserver API to check if an element is visible during scrolling
-
-const intersectionCallback = (entries) => {
-  entries.forEach((entry) => {
-    let elem = entry.target;
-    if (entry.isIntersecting) {
-      if (elem.classList.length === 1) {
-        elem.classList.add("active");
-      }
-    } else {
-      elem.classList.remove("active");
-    }
-  });
-};
-
-let options = {
-  root: null,
-  rootMargin: "5px",
-  threshold: 0.9,
-};
-let observer = new IntersectionObserver(intersectionCallback, options);
