@@ -1,6 +1,5 @@
 import "./style.css";
 import Icon from "./assets/test.png"
-// Brjda2003Rets!
 const myIcon = new Image();
 myIcon.src = Icon
 let options = {
